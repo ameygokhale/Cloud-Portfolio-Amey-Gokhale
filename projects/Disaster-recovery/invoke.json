@@ -1,0 +1,7 @@
+{
+  "src_bucket": "myapp-source-bucket",
+  "dr_bucket": "myapp-dr-bucket",
+  "snapshot_id": "rds-snapshot-2025-12-09",
+  "ami_id": "ami-demo-123456"
+}
+

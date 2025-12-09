@@ -1,0 +1,27 @@
+{
+  "Comment": "Create primary and secondary failover records (demo)",
+  "Changes": [
+    {
+      "Action": "CREATE",
+      "ResourceRecordSet": {
+        "Name": "app.dr-demo.example.com.",
+        "Type": "A",
+        "SetIdentifier": "PRIMARY",
+        "Failover": "PRIMARY",
+        "TTL": 60,
+        "ResourceRecords": [{ "Value": "10.0.0.1" }]
+      }
+    },
+    {
+      "Action": "CREATE",
+      "ResourceRecordSet": {
+        "Name": "app.dr-demo.example.com.",
+        "Type": "A",
+        "SetIdentifier": "SECONDARY",
+        "Failover": "SECONDARY",
+        "TTL": 60,
+        "ResourceRecords": [{ "Value": "10.0.1.1" }]
+      }
+    }
+  ]
+}

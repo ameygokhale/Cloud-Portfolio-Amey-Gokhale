@@ -1,0 +1,25 @@
+{
+    "Location": "https://route53.amazonaws.com/2013-04-01/hostedzone/CG12N4FGZCJQ0Y8",
+    "HostedZone": {
+        "Id": "/hostedzone/CG12N4FGZCJQ0Y8",
+        "Name": "dr-demo.example.com.",
+        "Config": {
+            "PrivateZone": false
+        },
+        "ResourceRecordSetCount": 2
+    },
+    "ChangeInfo": {
+        "Id": "/change/C1PA6795UKMFR9",
+        "Status": "INSYNC",
+        "SubmittedAt": "2017-03-15T01:36:41.958000+00:00"
+    },
+    "DelegationSet": {
+        "Id": "",
+        "NameServers": [
+            "ns-2048.awsdns-64.com",
+            "ns-2049.awsdns-65.net",
+            "ns-2050.awsdns-66.org",
+            "ns-2051.awsdns-67.co.uk"
+        ]
+    }
+}
