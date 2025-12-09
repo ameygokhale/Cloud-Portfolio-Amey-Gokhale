@@ -1,4 +1,4 @@
-# Disaster Recovery Automation (Pilot Light / Warm Standby)
+# Disaster Recovery Automation (Warm Standby)
 
 This project demonstrates a complete **Disaster Recovery (DR) Automation Workflow** using **LocalStack**, simulating AWS services such as S3, Lambda, and Route53 without incurring any real AWS cost.
 
@@ -13,7 +13,7 @@ All AWS actions are fully emulated locally.
 
 ---
 
-# 📌 Architecture Overview
+# Architecture Overview
 
 Pilot Light DR strategy means a minimal version of the environment is always running in the DR region, while full infrastructure is restored only during a disaster.
 
@@ -27,7 +27,7 @@ This project simulates:
 
 ---
 
-# 🐳 Step 1 — Start LocalStack
+# Step 1 — Start LocalStack
 
 LocalStack simulates AWS APIs locally.
 
@@ -39,7 +39,7 @@ docker compose up -d
 
 ---
 
-# 🛠 Step 2 — Configure Local AWS CLI Profile
+# Step 2 — Configure Local AWS CLI Profile
 
 ```bash
 aws configure --profile localstack
@@ -56,7 +56,7 @@ export AWS_ENDPOINT_URL=http://localhost:4566
 
 ---
 
-# 📁 Step 3 — Create S3 Buckets (Primary & DR)
+# Step 3 — Create S3 Buckets (Primary & DR)
 
 ### Create primary bucket
 ```bash
@@ -80,7 +80,7 @@ aws --endpoint-url=$AWS_ENDPOINT_URL s3 cp index.html s3://myapp-source-bucket/i
 
 ---
 
-# 🔄 Step 4 — Sync S3 Buckets (Simulated Cross-Region Replication)
+# Step 4 — Sync S3 Buckets (Simulated Cross-Region Replication)
 
 ![S3 Sync](images/sync-s3.png) (Simulated Cross-Region Replication)
 
@@ -94,7 +94,7 @@ This simulates S3 Cross-Region Replication (CRR).
 
 ---
 
-# 🧠 Step 5 — Prepare Lambda Invoke Payload
+# Step 5 — Prepare Lambda Invoke Payload
 
 Your lambda trigger input:
 ```json
@@ -110,7 +110,7 @@ Your lambda trigger input:
 
 ---
 
-# ⚙️ Step 6 — Create and Deploy Lambda Function
+# Step 6 — Create and Deploy Lambda Function
 
 ![Update Function Code](images/updatefunccode.png)
 
@@ -134,7 +134,7 @@ aws --endpoint-url=$AWS_ENDPOINT_URL lambda create-function \
 
 ---
 
-# ▶️ Step 7 — Invoke Lambda
+# Step 7 — Invoke Lambda
 
 ```bash
 aws --endpoint-url=$AWS_ENDPOINT_URL lambda invoke \
@@ -153,7 +153,7 @@ python3 -m json.tool out.json
 
 ---
 
-# 🧪 Step 8 — Run Lambda Restore Script Manually (Demo Mode)
+# Step 8 — Run Lambda Restore Script Manually (Demo Mode)
 
 ```bash
 python3 lambda_restore.py
@@ -168,7 +168,7 @@ This script:
 
 ---
 
-# 🌐 Step 9 — Create Route53 Hosted Zone
+# Step 9 — Create Route53 Hosted Zone
 
 ```bash
 aws --endpoint-url=$AWS_ENDPOINT_URL route53 create-hosted-zone \
@@ -180,7 +180,7 @@ aws --endpoint-url=$AWS_ENDPOINT_URL route53 create-hosted-zone \
 
 ---
 
-# 🔁 Step 10 — Create DNS Failover Records
+# Step 10 — Create DNS Failover Records
 
 PRIMARY → 10.0.0.1  
 SECONDARY → 10.0.1.1
@@ -195,31 +195,7 @@ aws --endpoint-url=$AWS_ENDPOINT_URL route53 change-resource-record-sets \
 
 ---
 
-# 🎯 What This Project Demonstrates
-
-This DR project successfully shows:
-
-### ✅ Technical Skills
-- AWS multi-region DR understanding
-- S3 replication patterns (simulated)
-- Route53 failover design
-- Lambda automation
-- RDS & EC2 restore logic
-
-### ✅ Implementation Skills
-- Building infrastructure automation end-to-end
-- Packaging and deploying Lambda
-- Using LocalStack to avoid AWS charges
-- Using CLI to simulate AWS services
-
-### ✅ DR Strategy Skills
-- Understanding pilot-light architecture
-- Being able to restore infra quickly
-- Switching traffic through DNS failover
-
----
-
-# 🧽 Cleanup
+# Cleanup
 
 Since everything runs in LocalStack:
 ```bash
@@ -234,14 +210,6 @@ rm -rf dr-pilotlight
 
 ---
 
-# 📚 Summary
+# Summary
 
-You built a full **Disaster Recovery Automation System** locally using AWS-like APIs without spending anything. This project is perfect for interviews, portfolio presentation, and real-world DR understanding.
-
-If you'd like, I can also generate:
-- A **GitHub-ready** polished version of the project repo
-- A **CloudFormation/Terraform** version
-- A **flow diagram** for the README
-
-Just tell me!
-
+You built a full **Disaster Recovery Automation System** locally using AWS-like APIs without spending anything.
