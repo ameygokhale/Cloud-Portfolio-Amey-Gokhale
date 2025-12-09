@@ -8,23 +8,23 @@ This project replicates those concepts locally while keeping everything **free, 
 
 # **What This Project Implements**
 
-### ✔ Organizational Units (Simulated via state files)
+### 1. Organizational Units (Simulated via state files)
 - `Prod`
 - `Dev`
 - `Logs`
 - `Security`
 
-### Service Control Policies (SCPs)
+### 2. Service Control Policies (SCPs)
 A realistic **deny policy** blocking dangerous operations, stored in `localstack/state/scp.json`.
 
-### Centralized CloudTrail (Simulated)
+### 3. Centralized CloudTrail (Simulated)
 - S3 bucket for logs: `lz-central-logs`
 - Manually uploaded CloudTrail-style log file (since CloudTrail APIs require LocalStack Pro)
 
-### CloudFormation
+### 4. CloudFormation
 Successfully deployed stack using LocalStack CloudFormation, demonstrating IaC discipline.
 
-### AWS CLI + awslocal Automation  
+### 5. AWS CLI + awslocal Automation  
 All functionality controlled via:
 - `scripts/01-create-organization.sh`
 - `scripts/02-create-ous.sh`
