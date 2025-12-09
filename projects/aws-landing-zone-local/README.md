@@ -14,17 +14,17 @@ This project replicates those concepts locally while keeping everything **free, 
 - `Logs`
 - `Security`
 
-### ✔ Service Control Policies (SCPs)
+### Service Control Policies (SCPs)
 A realistic **deny policy** blocking dangerous operations, stored in `localstack/state/scp.json`.
 
-### ✔ Centralized CloudTrail (Simulated)
+### Centralized CloudTrail (Simulated)
 - S3 bucket for logs: `lz-central-logs`
 - Manually uploaded CloudTrail-style log file (since CloudTrail APIs require LocalStack Pro)
 
-### ✔ CloudFormation
+### CloudFormation
 Successfully deployed stack using LocalStack CloudFormation, demonstrating IaC discipline.
 
-### ✔ AWS CLI + awslocal Automation  
+### AWS CLI + awslocal Automation  
 All functionality controlled via:
 - `scripts/01-create-organization.sh`
 - `scripts/02-create-ous.sh`
@@ -68,7 +68,7 @@ http://localhost:4566/_localstack/health
 
 ---
 
-### **2. Create virtual environment**
+### **2. Create a virtual environment**
 ```bash
 python3 -m venv .venv
 source .venv/bin/activate
