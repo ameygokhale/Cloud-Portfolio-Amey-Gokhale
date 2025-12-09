@@ -1,4 +1,4 @@
-# 🏗️ Multi-Account AWS Landing Zone (LocalStack Zero-Cost Simulation)
+# Multi-Account AWS Landing Zone (LocalStack Zero-Cost Simulation)
 
 This project demonstrates an **enterprise-grade AWS Landing Zone architecture** — implemented entirely using **LocalStack**, meaning you can practice and showcase a multi-account AWS governance setup **without paying for AWS services**.
 
@@ -6,7 +6,7 @@ This project replicates those concepts locally while keeping everything **free, 
 
 ---
 
-# 📌 **What This Project Implements**
+# **What This Project Implements**
 
 ### ✔ Organizational Units (Simulated via state files)
 - `Prod`
@@ -33,7 +33,7 @@ All functionality controlled via:
 
 ---
 
-# 🧠 **Theory: What Is a Landing Zone?**
+# **Theory: What Is a Landing Zone?**
 
 A **Landing Zone** is a preconfigured, secure, multi-account AWS environment used by enterprises. It automates:
 
@@ -56,7 +56,7 @@ This repo shows you understand these concepts even without deploying to real AWS
 
 ---
 
-# 🚀 **How to Run the Project Locally**
+# **How to Run the Project Locally**
 
 ### **1. Start LocalStack**
 ```bash
@@ -64,7 +64,7 @@ docker-compose up -d
 ```
 
 Visit the health dashboard:  
-👉 http://localhost:4566/_localstack/health
+http://localhost:4566/_localstack/health
 
 ---
 
@@ -104,7 +104,7 @@ awslocal cloudformation deploy   --template-file cloudformation/org-cloudtrail.y
 
 ---
 
-# 📸 **Screenshots (All stored under `/images/`)**
+# **Screenshots (All stored under `/images/`)**
 
 These screenshots demonstrate the working environment.
 
@@ -143,7 +143,7 @@ These screenshots demonstrate the working environment.
                            └──> SCP Guardrails
 
 
-### **7️⃣ CloudFormation Successful Deployment**  
+### **CloudFormation Successful Deployment**  
 ![CloudFormation Deployment](images/Screenshot7.png)
 
 ---
