@@ -1,4 +1,4 @@
-# Multi-Account AWS Landing Zone (LocalStack Zero-Cost Simulation)
+# Multi-Account AWS Landing Zone
 
 This project demonstrates an **enterprise-grade AWS Landing Zone architecture** — implemented entirely using **LocalStack**, meaning you can practice and showcase a multi-account AWS governance setup **without paying for AWS services**.
 
