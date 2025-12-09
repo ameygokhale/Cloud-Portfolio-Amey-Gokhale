@@ -1,0 +1,13 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: LocalStack Org CloudTrail simulation
+Resources:
+  LogBucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: lz-central-logs
+  OrgTrail:
+    Type: AWS::CloudTrail::Trail
+    Properties:
+      TrailName: org-trail
+      S3BucketName: lz-central-logs
+      IsMultiRegionTrail: true

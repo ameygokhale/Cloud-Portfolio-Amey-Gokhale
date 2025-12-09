@@ -1,0 +1,15 @@
+{"Policies":[{"Id":"p-deny","Name":"Deny-Unapproved-Services","Type":"SERVICE_CONTROL_POLICY","Content":{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "DenyRiskyActions",
+      "Effect": "Deny",
+      "Action": [
+        "iam:Delete*",
+        "organizations:DeleteOrganization",
+        "s3:DeleteBucket"
+      ],
+      "Resource": "*"
+    }
+  ]
+}}]}

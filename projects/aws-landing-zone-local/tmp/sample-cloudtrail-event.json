@@ -1,0 +1,27 @@
+{
+  "Records": [
+    {
+      "eventVersion": "1.08",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "EXAMPLEPRINCIPALID",
+        "arn": "arn:aws:iam::000000000000:user/test-user",
+        "accountId": "000000000000",
+        "accessKeyId": "EXAMPLEKEYID",
+        "userName": "test-user"
+      },
+      "eventTime": "2025-12-09T12:00:00Z",
+      "eventSource": "s3.amazonaws.com",
+      "eventName": "ListBuckets",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "127.0.0.1",
+      "userAgent": "awslocal/0.0.0",
+      "requestParameters": {},
+      "responseElements": {},
+      "requestID": "EXAMPLEREQID",
+      "eventID": "EXAMPLE-EVENT-ID-1234",
+      "eventType": "AwsApiCall",
+      "recipientAccountId": "000000000000"
+    }
+  ]
+}

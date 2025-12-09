@@ -1,0 +1,4 @@
+#!/bin/bash
+source ./scripts/helper-functions.sh
+OUs='{"OrganizationalUnits":[{"Id":"ou-prod","Name":"Prod"},{"Id":"ou-dev","Name":"Dev"},{"Id":"ou-logs","Name":"Logs"},{"Id":"ou-security","Name":"Security"}]}'
+save_json "ous" "$OUs"
