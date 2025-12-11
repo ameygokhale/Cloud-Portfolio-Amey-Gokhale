@@ -1,0 +1,9 @@
+duration
+src_bytes
+dst_bytes
+src_packets
+dst_packets
+wrong_fragment_1
+urgent_1
+protocol_1
+protocol_2
