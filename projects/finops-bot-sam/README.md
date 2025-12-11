@@ -127,7 +127,7 @@ ok
 
 ---
 
-# 🚀 Send the FinOps Report to Slack
+# Send the FinOps Report to Slack
 
 ```bash
 python3 reporter.py local_report.json
@@ -144,7 +144,7 @@ Slack now receives your automated cloud cost optimization report.
 
 ---
 
-# 📦 Project Files Overview
+# Project Files Overview
 
 | File | Purpose |
 |------|---------|
