@@ -1,0 +1,40 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: FinOps Cost Optimization & Automation Bot (read-only)
+
+Globals:
+  Function:
+    Timeout: 300
+    Runtime: python3.11
+    MemorySize: 256
+
+Resources:
+  FinOpsBotFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName: finops-cost-bot
+      Handler: lambda_function.lambda_handler
+      CodeUri: .
+      Policies:
+        - Version: "2012-10-17"
+          Statement:
+            - Effect: Allow
+              Action:
+                - ec2:DescribeInstances
+                - ec2:DescribeVolumes
+                - ec2:DescribeSnapshots
+                - ec2:DescribeAddresses
+                - ec2:DescribeTags
+                - rds:DescribeDBInstances
+                - rds:DescribeDBClusters
+                - cloudwatch:GetMetricStatistics
+                - cloudwatch:ListMetrics
+                - ce:GetCostAndUsage
+                - ce:GetDimensionValues
+                - sts:GetCallerIdentity
+              Resource: "*"
+      Environment:
+        Variables:
+          AWS_REGION: us-east-1
+          CPU_LOOKBACK_DAYS: "14"
+          SNAPSHOT_AGE_DAYS: "90"

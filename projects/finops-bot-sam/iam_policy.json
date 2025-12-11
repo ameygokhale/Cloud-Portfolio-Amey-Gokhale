@@ -1,0 +1,47 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect":"Allow",
+      "Action":[
+        "ec2:DescribeInstances",
+        "ec2:DescribeVolumes",
+        "ec2:DescribeSnapshots",
+        "ec2:DescribeAddresses",
+        "ec2:DescribeTags"
+      ],
+      "Resource":"*"
+    },
+    {
+      "Effect":"Allow",
+      "Action":[
+        "rds:DescribeDBInstances",
+        "rds:DescribeDBClusters"
+      ],
+      "Resource":"*"
+    },
+    {
+      "Effect":"Allow",
+      "Action":[
+        "cloudwatch:GetMetricStatistics",
+        "cloudwatch:ListMetrics"
+      ],
+      "Resource":"*"
+    },
+    {
+      "Effect":"Allow",
+      "Action":[
+        "ce:GetCostAndUsage",
+        "ce:GetDimensionValues"
+      ],
+      "Resource":"*"
+    },
+    {
+      "Effect":"Allow",
+      "Action":[
+        "sts:GetCallerIdentity"
+      ],
+      "Resource":"*"
+    }
+  ]
+}
